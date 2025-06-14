@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<h1>Ascending to descending (multiplied with 4)</h1>
+<p>Nos. being multiplied are 6,3,9,2,7</p>
+<body>
+    <script>
+        async function start() {
+            let numbers = [6, 3, 9, 2, 7];
+            let multiplied = await multiplyBy(numbers, 4);
+            let increasing = [...multiplied].sort(function (a, b) {
+                return a - b;
+            });
+            let decreasing = [...multiplied].sort(function (a, b) {
+                return b - a;
+            });
+
+            document.write("Ascending Order: " + increasing + "<br>");
+            document.write("Descending Order: " + decreasing);
+        }
+
+        async function multiplyBy(list, factor) {
+            return list.map(function (value) {
+                return value * factor;
+            });
+        }
+
+        start();
+    </script>
+</body>
+
+</html>
