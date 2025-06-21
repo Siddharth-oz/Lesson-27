@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html>
-<h1>Ascending to descending (multiplied with 4)</h1>
-<p>Nos. being multiplied are 6,3,9,2,7</p>
+
+<head>
+    <title>Mapping and Sorting</title>
+</head>
+
 <body>
+    <h1>Ascending to Descending (multiplied with 4)</h1>
+    <p>Nos. being multiplied are 6, 3, 9, 2, 7</p>
+
     <script>
-        async function start() {
-            let numbers = [6, 3, 9, 2, 7];
-            let multiplied = await multiplyBy(numbers, 4);
-            let increasing = [...multiplied].sort(function (a, b) {
-                return a - b;
-            });
-            let decreasing = [...multiplied].sort(function (a, b) {
-                return b - a;
-            });
+        let numbers = [6, 3, 9, 2, 7];
 
-            document.write("Ascending Order: " + increasing + "<br>");
-            document.write("Descending Order: " + decreasing);
-        }
+        // Mapping: multiply each number by 4
+        let mapped = numbers.map(n => n * 4);
 
-        async function multiplyBy(list, factor) {
-            return list.map(function (value) {
-                return value * factor;
-            });
-        }
+        // Sorting
+        let ascending = [...mapped].sort((a, b) => a - b);
+        let descending = [...mapped].sort((a, b) => b - a);
 
-        start();
+        document.write("Original Numbers: " + numbers.join(", ") + "<br>");
+        document.write("Mapped (×4): " + mapped.join(", ") + "<br>");
+        document.write("Ascending Order: " + ascending.join(", ") + "<br>");
+        document.write("Descending Order: " + descending.join(", "));
     </script>
 </body>
 
