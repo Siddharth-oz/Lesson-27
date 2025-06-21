@@ -11,16 +11,12 @@
 
     <script>
         let numbers = [6, 3, 9, 2, 7];
-
-        // Mapping: multiply each number by 4
         let mapped = numbers.map(n => n * 4);
-
-        // Sorting
         let ascending = [...mapped].sort((a, b) => a - b);
         let descending = [...mapped].sort((a, b) => b - a);
 
         document.write("Original Numbers: " + numbers.join(", ") + "<br>");
-        document.write("Mapped (×4): " + mapped.join(", ") + "<br>");
+        document.write("Mapped (*4): " + mapped.join(", ") + "<br>");
         document.write("Ascending Order: " + ascending.join(", ") + "<br>");
         document.write("Descending Order: " + descending.join(", "));
     </script>
